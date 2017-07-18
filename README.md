@@ -34,7 +34,7 @@
     }
 ```
 - 成功响应:
-    ```json
+```json
     {
         "RetCode": "int, 错误码，0代表成功，其它代表错误",
         "errorMsg": "string, 错误描述"
