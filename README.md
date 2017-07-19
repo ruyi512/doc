@@ -48,7 +48,6 @@
 
 ### 删除机器人
 - 请求地址: **DELETE /robots/<string:robot_id>**
-- 请求JSON格式参数:
 - 请求URL参数:
     - token: "string, 访问令牌，由平台分配"
 - 成功响应:
