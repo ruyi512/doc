@@ -25,6 +25,48 @@
     }
 ```
 
+### 查询机器人状态
+- 请求地址: **GET /robots/<string:robot_id>**
+- 请求JSON格式参数:
+- 请求URL参数:
+    - token: "string, 访问令牌，由平台分配"
+- 成功响应:
+```json
+    {
+        "RetCode": "int, 错误码，0代表成功，其它代表错误",
+        "errorMsg": "string, 错误描述"
+        "data": {
+            "robot": {
+                "id": "string, 机器人唯一标识",
+                "status": "string, 状态",
+                "username": "string, 微信号",
+                "nickname": "string, 微信昵称"
+            }
+        }
+    }
+```
+
+### 删除机器人
+- 请求地址: **DELETE /robots/<string:robot_id>**
+- 请求JSON格式参数:
+- 请求URL参数:
+    - token: "string, 访问令牌，由平台分配"
+- 成功响应:
+```json
+    {
+        "RetCode": "int, 错误码，0代表成功，其它代表错误",
+        "errorMsg": "string, 错误描述"
+        "data": {
+            "robot": {
+                "id": "string, 机器人唯一标识",
+                "status": "string, 状态",
+                "username": "string, 微信号",
+                "nickname": "string, 微信昵称"
+            }
+        }
+    }
+```
+
 ### 微信登录
 - 请求地址: **POST /robots/<string:robot_id>/login**
 - 请求JSON格式参数:
