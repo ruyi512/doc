@@ -2,7 +2,7 @@
 
 ### 创建微信机器人
 - 请求地址: **POST /robots**
-- 请求参数:
+- 请求JSON格式参数:
 ```json
     {
         "token": "string, 访问令牌，由平台分配",
@@ -27,10 +27,11 @@
 
 ### 微信登录
 - 请求地址: **POST /robots/<string:robot_id>/login**
-- 请求参数:
+- 请求JSON格式参数:
 ```json
     {
-        "token": "string, 访问令牌，由平台分配"
+        "token": "string, 访问令牌，由平台分配",
+        "callback_url": "string, 登录回调url，微信二维码登录成功发送GET通知这个url"
     }
 ```
 - 成功响应:
@@ -50,9 +51,9 @@
     }
 ```
 
-### 获取微信群列表
-- 请求地址: **GET /robots/<string:robot_id>/rooms**
-- 请求参数:
+### 同步微信群列表
+- 请求地址: **POST /robots/<string:robot_id>/rooms/sync**
+- 请求JSON格式参数:
 ```json
     {
         "token": "string, 访问令牌，由平台分配"
@@ -75,9 +76,30 @@
     }
 ```
 
+### 获取微信群列表
+- 请求地址: **GET /robots/<string:robot_id>/rooms**
+- 请求URL参数:
+    - token: "string, 访问令牌，由平台分配"
+- 成功响应:
+```json
+    {
+        "RetCode": "int, 错误码，0代表成功，其它代表错误",
+        "errorMsg": "string, 错误描述"
+        "data": {
+            "rooms": [
+                {
+                    "id": "string, 微信群唯一标识",
+                    "nickname": "string, 微信群备注"
+                },
+                ...
+            ]
+        }
+    }
+```
+
 ### 发送消息
 - 请求地址: **POST /robots/<string:robot_id>/message**
-- 请求参数:
+- 请求JSON格式参数:
 ```json
     {
         "token": "string, 访问令牌，由平台分配",
@@ -96,7 +118,7 @@
 
 ### 退出登录
 - 请求地址: **POST /robots/<string:robot_id>/logout**
-- 请求参数:
+- 请求JSON格式参数:
 ```json
     {
         "token": "string, 访问令牌，由平台分配"
@@ -111,6 +133,7 @@
 ```
 
 ## 错误码
+- 2000：应用不存在
 - 1205：图片发送太频繁，被限制发送
 - 1102：微信已经退出登录
 - 1: 请求接口失败
