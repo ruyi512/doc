@@ -27,7 +27,6 @@
 
 ### 查询机器人状态
 - 请求地址: **GET /robots/<string:robot_id>**
-- 请求JSON格式参数:
 - 请求URL参数:
     - token: "string, 访问令牌，由平台分配"
 - 成功响应:
