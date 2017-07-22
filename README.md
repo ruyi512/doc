@@ -1,7 +1,8 @@
 ## 接口说明
 
 ### 创建微信机器人
-- 请求地址: **POST /robots**
+- HTTP请求方式: POST
+- 请求地址: **/robots**
 - 请求JSON格式参数:
 ```json
     {
@@ -26,7 +27,8 @@
 ```
 
 ### 查询机器人状态
-- 请求地址: **GET /robots/<string:robot_id>**
+- HTTP请求方式: GET
+- 请求地址: **/robots/<string:robot_id>**
 - 请求URL参数:
     - token: "string, 访问令牌，由平台分配"
 - 成功响应:
@@ -46,7 +48,8 @@
 ```
 
 ### 删除机器人
-- 请求地址: **DELETE /robots/<string:robot_id>**
+- HTTP请求方式: DELETE
+- 请求地址: **/robots/<string:robot_id>**
 - 请求URL参数:
     - token: "string, 访问令牌，由平台分配"
 - 成功响应:
@@ -66,7 +69,8 @@
 ```
 
 ### 微信登录
-- 请求地址: **POST /robots/<string:robot_id>/login**
+- HTTP请求方式: POST
+- 请求地址: **/robots/<string:robot_id>/login**
 - 请求JSON格式参数:
 ```json
     {
@@ -92,7 +96,8 @@
 ```
 
 ### 同步微信群列表
-- 请求地址: **POST /robots/<string:robot_id>/rooms/sync**
+- HTTP请求方式: POST
+- 请求地址: **/robots/<string:robot_id>/rooms/sync**
 - 请求JSON格式参数:
 ```json
     {
@@ -117,7 +122,8 @@
 ```
 
 ### 获取微信群列表
-- 请求地址: **GET /robots/<string:robot_id>/rooms**
+- HTTP请求方式: GET
+- 请求地址: **/robots/<string:robot_id>/rooms**
 - 请求URL参数:
     - token: "string, 访问令牌，由平台分配"
 - 成功响应:
@@ -138,7 +144,8 @@
 ```
 
 ### 发送消息
-- 请求地址: **POST /robots/<string:robot_id>/message**
+- HTTP请求方式: POST
+- 请求地址: **/robots/<string:robot_id>/message**
 - 请求JSON格式参数:
 ```json
     {
@@ -157,11 +164,36 @@
 ```
 
 ### 退出登录
-- 请求地址: **POST /robots/<string:robot_id>/logout**
+- HTTP请求方式: POST
+- 请求地址: **/robots/<string:robot_id>/logout**
 - 请求JSON格式参数:
 ```json
     {
         "token": "string, 访问令牌，由平台分配"
+    }
+```
+- 成功响应:
+```json
+    {
+        "RetCode": "int, 错误码，0代表成功，其它代表错误",
+        "errorMsg": "string, 错误描述"
+    }
+```
+
+## 接口回调
+### 通知开发者
+- HTTP请求方式: POST
+- 请求地址: **接口URL，由开发者提供**
+- 请求JSON格式参数:
+```json
+    {
+        "token": "string, 访问令牌，由平台分配",
+        "action": "send_message",
+        "data": {
+            "content": "string, 消息内容",
+            "robot_id": "string, 机器人ID",
+            "room_id": "string, 群ID"
+        }
     }
 ```
 - 成功响应:
@@ -181,3 +213,5 @@
 - -1001：微信群不存在
 - -1002：未发现登录信息
 - -1003：加载登录信息失败
+
+
