@@ -13,7 +13,7 @@
 - 成功响应:
 ```json
     {
-        "RetCode": "int, 错误码，0代表成功，其它代表错误",
+        "retCode": "int, 错误码，0代表成功，其它代表错误",
         "errorMsg": "string, 错误描述"
         "data": {
             "robot": {
@@ -34,7 +34,7 @@
 - 成功响应:
 ```json
     {
-        "RetCode": "int, 错误码，0代表成功，其它代表错误",
+        "retCode": "int, 错误码，0代表成功，其它代表错误",
         "errorMsg": "string, 错误描述"
         "data": {
             "robot": {
@@ -55,7 +55,7 @@
 - 成功响应:
 ```json
     {
-        "RetCode": "int, 错误码，0代表成功，其它代表错误",
+        "retCode": "int, 错误码，0代表成功，其它代表错误",
         "errorMsg": "string, 错误描述"
         "data": {
             "robot": {
@@ -81,7 +81,7 @@
 - 成功响应:
 ```json
     {
-        "RetCode": "int, 错误码，0代表成功，其它代表错误",
+        "retCode": "int, 错误码，0代表成功，其它代表错误",
         "errorMsg": "string, 错误描述"
         "data": {
             "robot": {
@@ -107,7 +107,7 @@
 - 成功响应:
 ```json
     {
-        "RetCode": "int, 错误码，0代表成功，其它代表错误",
+        "retCode": "int, 错误码，0代表成功，其它代表错误",
         "errorMsg": "string, 错误描述"
         "data": {
             "rooms": [
@@ -129,7 +129,7 @@
 - 成功响应:
 ```json
     {
-        "RetCode": "int, 错误码，0代表成功，其它代表错误",
+        "retCode": "int, 错误码，0代表成功，其它代表错误",
         "errorMsg": "string, 错误描述"
         "data": {
             "rooms": [
@@ -158,7 +158,7 @@
 - 成功响应:
 ```json
     {
-        "RetCode": "int, 错误码，0代表成功，其它代表错误",
+        "retCode": "int, 错误码，0代表成功，其它代表错误",
         "errorMsg": "string, 错误描述"
     }
 ```
@@ -175,7 +175,7 @@
 - 成功响应:
 ```json
     {
-        "RetCode": "int, 错误码，0代表成功，其它代表错误",
+        "retCode": "int, 错误码，0代表成功，其它代表错误",
         "errorMsg": "string, 错误描述"
     }
 ```
@@ -192,14 +192,15 @@
         "data": {
             "content": "string, 消息内容",
             "robot_id": "string, 机器人ID",
-            "room_id": "string, 群ID"
+            "room_id": "string, 群ID",
+            "nickname": "string, 昵称"
         }
     }
 ```
 - 成功响应:
 ```json
     {
-        "RetCode": "int, 错误码，0代表成功，其它代表错误",
+        "retCode": "int, 错误码，0代表成功，其它代表错误",
         "errorMsg": "string, 错误描述"
     }
 ```
